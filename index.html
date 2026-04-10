@@ -3,113 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajid Khattak | Official Poetry</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sajid Khattak | مکمل ڈیجیٹل دیوان</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
         :root {
             --gold: #d4af37;
-            --bg-overlay: rgba(0, 0, 0, 0.75);
+            --glass: rgba(0, 0, 0, 0.8);
+            --text: #ffffff;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background: var(--bg-overlay) url('https://image.spread.ai/api/image/b8014e7a2b9d4e51bd598c199d750c18.png') no-repeat center center fixed;
+            background: url('Gemini_Generated_Image_b87mn6b87mn6b87m.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
             font-family: 'Noto Nastaliq Urdu', serif;
+            color: var(--text);
+            scroll-behavior: smooth;
         }
 
-        /* Music Floating Button */
-        .music-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(212, 175, 55, 0.2);
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1000;
-            font-size: 20px;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 80px auto;
+        .main-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
             padding: 20px;
         }
 
-        .poetry-card {
-            background: rgba(20, 20, 20, 0.85);
-            backdrop-filter: blur(8px);
-            border-right: 5px solid var(--gold);
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 40px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--gold);
+            margin: 0;
+            text-shadow: 3px 3px 15px rgba(0,0,0,1);
+        }
+
+        .sub-header {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        /* Index Styles */
+        .index-box {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            background: var(--glass);
             padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 10px;
+            border-radius: 20px;
+            border: 1px solid var(--gold);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .text-content { font-size: 22px; line-height: 2.5; margin-bottom: 15px; }
+        .index-box h2 {
+            text-align: center;
+            color: var(--gold);
+            margin-top: 0;
+        }
 
-        /* Social Media Section */
-        .footer {
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .index-grid a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+            display: block;
+            padding: 5px;
+            border-bottom: 1px dashed #444;
+        }
+
+        .index-grid a:hover {
+            color: var(--gold);
+            padding-right: 10px;
+        }
+
+        /* Poetry Cards Area */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding-bottom: 100px;
+        }
+
+        .poetry-card {
+            width: 95%;
+            max-width: 700px;
+            background: var(--glass);
+            padding: 50px 30px;
+            border-radius: 25px;
+            border-right: 6px solid var(--gold);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            text-align: center;
+            backdrop-filter: blur(8px);
+            position: relative;
+        }
+
+        .poetry-card::before {
+            content: "❞";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 50px;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+
+        .poetry-text {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            line-height: 2.2;
+            white-space: pre-line;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .author-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-family: sans-serif;
+        }
+
+        footer {
             text-align: center;
             padding: 40px;
-            background: rgba(0,0,0,0.8);
-        }
-
-        .social-links a {
+            background: #000;
             color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
             font-family: sans-serif;
-            font-weight: bold;
-            border: 1px solid var(--gold);
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
         }
 
-        .social-links a:hover { background: var(--gold); color: #000; }
+        /* Responsive Settings */
+        @media (max-width: 600px) {
+            .poetry-card { padding: 30px 15px; }
+        }
     </style>
 </head>
 <body>
 
-    <button class="music-btn" onclick="toggleMusic()">🎵</button>
-    
-    <audio id="bgMusic" loop>
-        <source src="http://googleusercontent.com/file_content/0" type="audio/mpeg">
-    </audio>
+    <div class="main-overlay">
+        <header>
+            <h1>ساجد خٹک کا ڈیجیٹل دیوان</h1>
+            <div class="sub-header">DESIGNER | POET | GAMER</div>
+        </header>
 
-    <div class="container">
-        <h1 style="text-align: center; color: var(--gold); margin-bottom: 50px;">ساجد خٹک کی شاعری</h1>
-
-        <div class="poetry-card">
-            <div class="text-content">
-                تجھے بھولنا تو چاہا لیکن بھلا نہ پائے <br>
-                جتنا بھلانا چاہا تم اتنا یاد آئے
+        <div class="index-box">
+            <h2>فہرستِ کلام (انڈیکس)</h2>
+            <div class="index-grid">
+                <a href="#p32">32. جدائی کا پل</a>
+                <a href="#p31">31. عزمِ منزل</a>
+                <a href="#p30">30. رمتے جوگی</a>
+                <a href="#p29">29. شورِ گماں اور امکاں</a>
+                <a href="#p28">28. دستورِ بیداری</a>
+                <a href="#p27">27. حیات کا نصاب</a>
+                <a href="#p26">26. وقت اور مرہم</a>
+                <a href="#p25">25. تیرا کیا بنا؟</a>
+                <a href="#p1">1-24. گذشتہ کلام</a>
             </div>
-            <div style="color: var(--gold);">— ساجد خٹک</div>
         </div>
 
-        </div>
+        <div class="cards-container">
+            
+            <div class="poetry-card" id="p32">
+                <div class="poetry-text">
+                    جدائی کا ایک بھی پل اب سہا نہیں جاتا
+                    بن تیرے اب رہا نہیں جاتا
 
-    <div class="footer">
-        <div class="social-links">
-            <a href="https://facebook.com/sajidkhattak998" target="_blank">Facebook</a>
-            <a href="https://wa.me/923336951313" target="_blank">WhatsApp</a>
-        </div>
-        <p style="margin-top: 20px; font-size: 14px; opacity: 0.6;">Designed for Sajid Khan Khattak</p>
+                    بتا دو نہ لوٹ کر کب آو گے
+                    <span class="highlight">تیرے بن سانس لیا نہیں جاتا</span>
+                </div>
+                <div class="author-footer">SAJID KHAN KHATTAK</div>
+            </div>
+
+            <div class="poetry-card" id="p31">
+                <div class="poetry-text">
+                    وسوَسے دِل میں نہ رکھ ، خوف ِرَسَن لے کے نہ چل
+                    عزمِ منزِل ہے تو ، ہمراہ ثکن لے کے نہ چل
+
+                    <span class="highlight">راہِ منزل میں بہر حال تبسّم فرما</span>
+                    ہر قدم دُکھ سہی، ماتھے پہ شکن لے کے نہ چل
+                </div>
+                <div class="author-footer">SAJID KHAN KHATTAK</div>
+            </div>
+
+            <div class="poetry-card" id="p30">
+                <div class="poetry-text">
+                    کون کسی کا یار ہے سائیں۔۔
+                    یاری بھی بیوپار ہے سائیں۔۔
+
+                    ہم تو ہیں بس رمتے جوگی،
+                    <span class="highlight">آپ کا تو گھر بار ہے سائیں۔۔</span>
+                </div>
+                <div class="author-footer">SAJID KHAN KHATTAK</div>
+            </div>
+
+            <div class="poetry-card" id="p28">
+                <div class="poetry-text">
+                    اَفلاک کے پَردوں سے یہ جَاری ہوا فرمان
+                    وَالْعَصْر ! خَسارے ہی خَسارے میں ہے اِنسان
+
+                    اَفلَاس کی آغوش میں رَہتی ہے بغَاوَت
+                    مَحرُومی کی دَہلِیز پہ پلتا ہے یہ طُوفَان
+
+                    <span class="highlight">جِس سحر سے لَرزاں تھے کبھی قیصَر و کِسریٰ
+                    اُس طَلعَتِ تَاباں کے اَمیں خود کو تُو پہچان</span>
+                </div>
+                <div class="author-footer">SAJID KHAN KHATTAK</div>
+            </div>
+
+            <div class="poetry-card" id="p25">
+                <div class="poetry-text">
+                    تجھے زندگی کا شعور تھا، تیرا کیا بنا؟
+                    تُو خاموش کیوں ہے مجھے بتا، تیرا کیا بنا؟
+
+                    میں مقابلے میں شریک تھا فقط اس لئے
+                    <span class="highlight">کوئی آتا مجھ سے یہ پُوچھتا، تیرا کیا بنا؟</span>
+                </div>
+                <div class="author-footer">SAJID KHAN KHATTAK</div>
+            </div>
+
+            </div>
     </div>
 
-    <script>
-        const music = document.getElementById("bgMusic");
-        function toggleMusic() {
-            music.paused ? music.play() : music.pause();
-        }
-    </script>
+    <footer>
+        <p>&copy; 2026 SAJID KHAN KHATTAK | OFFICIAL REPOSITORY</p>
+    </footer>
+
 </body>
 </html>
