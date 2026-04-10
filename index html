@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajid Khattak | Official Poetry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --bg-overlay: rgba(0, 0, 0, 0.75);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-overlay) url('https://image.spread.ai/api/image/b8014e7a2b9d4e51bd598c199d750c18.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* Music Floating Button */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        .poetry-card {
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(8px);
+            border-right: 5px solid var(--gold);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .text-content { font-size: 22px; line-height: 2.5; margin-bottom: 15px; }
+
+        /* Social Media Section */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.8);
+        }
+
+        .social-links a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: sans-serif;
+            font-weight: bold;
+            border: 1px solid var(--gold);
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { background: var(--gold); color: #000; }
+    </style>
+</head>
+<body>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+    
+    <audio id="bgMusic" loop>
+        <source src="http://googleusercontent.com/file_content/0" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1 style="text-align: center; color: var(--gold); margin-bottom: 50px;">ساجد خٹک کی شاعری</h1>
+
+        <div class="poetry-card">
+            <div class="text-content">
+                تجھے بھولنا تو چاہا لیکن بھلا نہ پائے <br>
+                جتنا بھلانا چاہا تم اتنا یاد آئے
+            </div>
+            <div style="color: var(--gold);">— ساجد خٹک</div>
+        </div>
+
+        </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://facebook.com/sajidkhattak998" target="_blank">Facebook</a>
+            <a href="https://wa.me/923336951313" target="_blank">WhatsApp</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.6;">Designed for Sajid Khan Khattak</p>
+    </div>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+        function toggleMusic() {
+            music.paused ? music.play() : music.pause();
+        }
+    </script>
+</body>
+</html>
