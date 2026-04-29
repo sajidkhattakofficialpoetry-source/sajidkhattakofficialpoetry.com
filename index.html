@@ -11,26 +11,8 @@
         .main-overlay { min-height: 100vh; padding: 20px; }
         header { text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--gold); margin-bottom: 40px; background: rgba(0,0,0,0.5); }
         header h1 { font-size: 2.5rem; color: var(--gold); margin: 0; }
-        
-        /* GRID SYSTEM - Jo aapne manga tha */
-        .poetry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .poetry-card {
-            background: var(--glass);
-            padding: 25px 20px;
-            border-radius: 15px;
-            border-top: 3px solid var(--gold);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-        }
-        .poetry-card:hover { transform: scale(1.02); border-color: #fff; }
+        .poetry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .poetry-card { background: var(--glass); padding: 25px 20px; border-radius: 15px; border-top: 3px solid var(--gold); text-align: center; backdrop-filter: blur(10px); }
         .poetry-text { font-size: 1.2rem; line-height: 2.2; white-space: pre-line; margin-bottom: 15px; }
         .author-footer { font-size: 11px; color: var(--gold); border-top: 1px solid #444; padding-top: 10px; font-family: sans-serif; font-weight: bold; }
         .section-title { grid-column: 1 / -1; text-align: center; color: var(--gold); font-size: 1.5rem; margin: 30px 0; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
@@ -44,14 +26,43 @@
     </header>
     <div class="poetry-grid">
         <div class="section-title">تازہ ترین کلام (New)</div>
+        
         <div class="poetry-card">
-            <p class="poetry-text">رہ نہ پائو گے کبھی بھلا کر دکھ لو 🥹... (Aapke naye ashaar)</p>
+            <p class="poetry-text">رہ نہ پائو گے کبھی بھلا کر دکھ لو 🥹
+            یقین نہیں آتا تو آزما کر دیکھ لو 🥲
+            ہر جگہ محسوس ہو گی ہماری ہی کمی 💝
+            اپنی محفل کو kaisa بھی سجا کر دیکھ لو 🥹💯</p>
             <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
         </div>
-        
-        <div class="section-title">گذشتہ کلام (Previous)</div>
+
         <div class="poetry-card">
-            <p class="poetry-text">شاید خواہش فضول ہیں اب... (Aapka purana record)</p>
+            <p class="poetry-text">سنا تھا عشق میں گہرائی ہوتی ہے ...❤️‍🩹🥺
+            پھر کیوں محبت میں بے وفائی ہوتی ہے 💔🥹
+            ٹوٹ کر چاہنے والوں کے نصیب میں ❤️‍🩹🥺
+            ہمیشہ کیوں تنہائی ہوتی ہے ...💔🥹</p>
+            <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
+        </div>
+
+        <div class="section-title">گذشتہ کلام (Previous)</div>
+
+        <div class="poetry-card">
+            <p class="poetry-text">شاید خواہش فضول ہیں اب 
+            جو پانا تھا 
+            وہ تو نہیں ملا مجھے</p>
+            <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
+        </div>
+
+        <div class="poetry-card">
+            <p class="poetry-text">آج پھر کسی نے کہا بہت اچھے ہو تم
+            میں نے ہنس کر کہا یہی تو خرابی ہے</p>
+            <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
+        </div>
+
+        <div class="poetry-card">
+            <p class="poetry-text">جدائی کا ایک بھی پل اب سہا نہیں جاتا
+            بن تیرے اب رہا نہیں جاتا
+            بتا دو نہ لوٹ کر کب آو گے
+            تیرے بن سانس لیا نہیں جاتا</p>
             <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
         </div>
     </div>
