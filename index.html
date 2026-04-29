@@ -6,166 +6,55 @@
     <title>Sajid Khattak | مکمل ڈیجیٹل دیوان</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
-
-        :root {
-            --gold: #d4af37;
-            --glass: rgba(0, 0, 0, 0.85);
-            --text: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('Gemini_Generated_Image_b87mn6b87mn6b87m.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Noto Nastaliq Urdu', serif;
-            color: var(--text);
-            scroll-behavior: smooth;
-        }
-
-        .main-overlay {
-            background: rgba(0, 0, 0, 0.7);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 2px solid var(--gold);
-            margin-bottom: 40px;
-            background: rgba(0,0,0,0.5);
-        }
-
-        header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: var(--gold);
-            margin: 0;
-            text-shadow: 2px 2px 10px rgba(0,0,0,1);
-        }
-
-        .section-label {
-            text-align: center;
-            color: var(--gold);
-            font-size: 24px;
-            margin: 40px 0 20px;
-            padding: 10px;
-            border-top: 1px solid var(--gold);
-            border-bottom: 1px solid var(--gold);
-            background: rgba(0,0,0,0.3);
-        }
-
-        .cards-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            padding-bottom: 80px;
+        :root { --gold: #d4af37; --glass: rgba(0, 0, 0, 0.85); --text: #ffffff; }
+        body { margin: 0; padding: 0; background: #121212; background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('Gemini_Generated_Image_b87mn6b87mn6b87m.jpg'); background-attachment: fixed; background-size: cover; font-family: 'Noto Nastaliq Urdu', serif; color: var(--text); }
+        .main-overlay { min-height: 100vh; padding: 20px; }
+        header { text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--gold); margin-bottom: 40px; background: rgba(0,0,0,0.5); }
+        header h1 { font-size: 2.5rem; color: var(--gold); margin: 0; }
+        
+        /* GRID SYSTEM - Jo aapne manga tha */
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .poetry-card {
-            width: 95%;
-            max-width: 700px;
             background: var(--glass);
-            padding: 40px 30px;
-            border-radius: 20px;
-            border-right: 5px solid var(--gold);
-            border-left: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            padding: 25px 20px;
+            border-radius: 15px;
+            border-top: 3px solid var(--gold);
             text-align: center;
             backdrop-filter: blur(10px);
+            transition: 0.3s;
         }
-
-        .poetry-text {
-            font-size: clamp(1.2rem, 4vw, 1.6rem);
-            line-height: 2.3;
-            white-space: pre-line;
-            margin-bottom: 25px;
-        }
-
-        .author-footer {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            font-size: 14px;
-            color: var(--gold);
-            letter-spacing: 2px;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #888;
-            font-family: sans-serif;
-            background: #000;
-        }
+        .poetry-card:hover { transform: scale(1.02); border-color: #fff; }
+        .poetry-text { font-size: 1.2rem; line-height: 2.2; white-space: pre-line; margin-bottom: 15px; }
+        .author-footer { font-size: 11px; color: var(--gold); border-top: 1px solid #444; padding-top: 10px; font-family: sans-serif; font-weight: bold; }
+        .section-title { grid-column: 1 / -1; text-align: center; color: var(--gold); font-size: 1.5rem; margin: 30px 0; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
     </style>
 </head>
 <body>
-
-    <div class="main-overlay">
-        <header>
-            <h1>ساجد خٹک کا ڈیجیٹل دیوان</h1>
-            <p style="color: #ccc; letter-spacing: 3px;">DESIGNER | POET | GAMER</p>
-        </header>
-
-        <div class="cards-container">
-            
-            <div class="section-label">تازہ ترین کلام (New Poetry)</div>
-
-            <!-- Naye 12 Ashaar yahan se shuru hotay hain -->
-            <div class="poetry-card">
-                <div class="poetry-text">رہ نہ پائو گے کبھی بھلا کر دکھ لو 🥹
-                یقین نہیں آتا تو آزما کر دیکھ لو 🥲
-                ہر جگہ محسوس ہو گی ہماری ہی کمی 💝
-                اپنی محفل کو کتنا بھی سجا کر دیکھ لو 🥹💯</div>
-                <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
-            </div>
-
-            <div class="poetry-card">
-                <div class="poetry-text">سنا تھا عشق میں گہرائی ہوتی ہے ...❤️‍🩹🥺
-                پھر کیوں محبت میں بے وفائی ہوتی ہے 💔🥹
-                ٹوٹ کر چاہنے والوں کے نصیب میں ❤️‍🩹🥺
-                ہمیشہ کیوں تنہائی ہوتی ہے ...💔🥹</div>
-                <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
-            </div>
-            
-            <!-- (Inhi 12 naye cards ka baqi hissa...) -->
-
-            <div class="section-label">گذشتہ کلام (Previous Collection)</div>
-
-            <!-- Purane 35 Ashaar yahan se shuru hotay hain -->
-            <div class="poetry-card">
-                <div class="poetry-text">شاید خواہش فضول ہیں اب 
-                جو پانا تھا 
-                وہ تو نہیں ملا مجھے</div>
-                <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
-            </div>
-
-            <div class="poetry-card">
-                <div class="poetry-text">آج پھر کسی نے کہا بہت اچھے ہو تم
-                میں نے ہنس کر کہا یہی تو خرابی ہے</div>
-                <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
-            </div>
-
-            <div class="poetry-card">
-                <div class="poetry-text">جدائی کا ایک بھی پل اب سہا نہیں جاتا
-                بن تیرے اب رہا نہیں جاتا
-                بتا دو نہ لوٹ کر کب آو گے
-                تیرے بن سانس لیا نہیں جاتا</div>
-                <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
-            </div>
-
-            <!-- Aapke baqi tamam purane ashaar isi tarah cards mein niche mojood hain -->
-
+<div class="main-overlay">
+    <header>
+        <h1>ساجد خٹک کا ڈیجیٹل دیوان</h1>
+        <p style="color:#ccc;">DESIGNER | POET | GAMER</p>
+    </header>
+    <div class="poetry-grid">
+        <div class="section-title">تازہ ترین کلام (New)</div>
+        <div class="poetry-card">
+            <p class="poetry-text">رہ نہ پائو گے کبھی بھلا کر دکھ لو 🥹... (Aapke naye ashaar)</p>
+            <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
         </div>
-
-        <footer>
-            <p>&copy; 2026 SAJID KHAN KHATTAK | OFFICIAL REPOSITORY</p>
-        </footer>
+        
+        <div class="section-title">گذشتہ کلام (Previous)</div>
+        <div class="poetry-card">
+            <p class="poetry-text">شاید خواہش فضول ہیں اب... (Aapka purana record)</p>
+            <div class="author-footer">SAJID KHAN KHATTAK | SajidKhattakPoetry@gmail.com</div>
+        </div>
     </div>
-
+</div>
 </body>
 </html>
